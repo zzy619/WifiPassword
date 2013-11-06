@@ -66,11 +66,11 @@ public class MainActivity extends Activity {
             if (ssidMatcher.find() ) {
                 TextView textViewSSID = new TextView(this);
                 TextView textViewPsk = new TextView(this);
-                textViewSSID.setText("Wifi名称：" + ssidMatcher.group() );
+                textViewSSID.setText("Wifi名称：" + ssidMatcher.group(1) );
                 Pattern psk = Pattern.compile("psk=\"([^\"]+)\"");
                 Matcher pskMatcher = psk.matcher(networkBlock);
                 if (pskMatcher.find() ) {
-                    textViewPsk.setText("Wifi密码：" + pskMatcher.group() );
+                    textViewPsk.setText("Wifi密码：" + pskMatcher.group(1) );
                 } else {
                     textViewPsk.setText("无密码");
                 }
